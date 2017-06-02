@@ -1,0 +1,29 @@
+#Set account info
+set imap_user = # '...@zattoo.com'
+set imap_pass = # if using gmail 02-auth: generate app specific password
+
+set spoolfile = imaps://imap.gmail.com/INBOX #if using IMAP, use imaps://example.com/INBOX
+set folder = imaps://imap.gmail.com/  #if using IMAP, use imaps://example.com/
+set from = # '...@zattoo.com'
+set realname = # real name
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+#set signature="~/.signature"
+
+#Mailbox behaviour
+set mail_check = 15                  #check for new mail
+set timeout = 30
+set include = yes                    #quote when replying
+
+#Compose/reply/etc...
+set editor = vim                     #change to your favourite command line editor  
+ignore headers *
+unignore headers from to subject date cc
+hdr_order from to cc subject date
+set fast_reply                     #don't ask for to, subject when replying
+unset metoo                        #remove myself from replies
+set sort = date-received
+
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
